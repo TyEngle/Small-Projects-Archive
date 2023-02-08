@@ -1,0 +1,91 @@
+/* Roboto text-face from google fonts
+with regular 400 + bold 700 fonts  */
+@import url("https://fonts.googleapis.com/css2?family=Muli&display=swap");
+
+/* So padding of an element will not effect 
+width of an element*/
+* {
+  box-sizing: border-box;
+  background-color: hsl(300, 100%, 97%, 12%);
+}
+
+body {
+  font-family: "Muli", sans-serif;
+  /* flex to center body easier */
+  display: flex;
+
+  /* in this case align items will align
+horizontally since direction is column */
+  align-items: center;
+  /* flexbox needs height attribute for
+  justify content to take effect */
+  justify-content: center;
+  /* vh meaning viewport height */
+  height: 100vh;
+  /* all across the screen -- used
+  to hide scrollbars on default */
+  overflow: hidden;
+  margin: 0;
+}
+
+#headline {
+  color: rgb(54, 100, 165);
+  margin: 60px;
+}
+
+#headline > img {
+  height: 200px;
+  width: 220px;
+}
+
+.container {
+  /* sets all elements to display
+  in a row by default */
+  display: flex;
+  width: 90vw;
+}
+
+.panel {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  /* adjust the roundness of edges */
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  flex: 0.5;
+  margin: 10px;
+  position: relative;
+  transition: flex 0.7s ease-in;
+}
+
+.panel h3 {
+  font-size: 24px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+}
+
+.panel.active {
+  flex: 5;
+}
+
+.panel.active h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+/* changes take place when window is
+less than 480px width */
+@media (max-width: 600px) {
+  .container {
+    width: 100vw;
+  }
+  /* editing fourth and fifth element of class panel */
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5) {
+    display: none;
+  }
+}
