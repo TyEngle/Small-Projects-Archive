@@ -1,0 +1,45 @@
+/* text-face from google fonts
+with regular 400 + bold 700 fonts */
+@import url("https://fonts.googleapis.com/css?family=Ubuntu");
+
+/* box sizing as border-box so padding
+of an element will not effect 
+width of an element */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  /* set display as fex to easier center */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* flexbox needs height attribute for
+  justify content to take effect */
+  /* vh referencing height of viewport */
+  height: 100vh;
+  /* all across the screen -- used
+  to hide scrollbars on default */
+  overflow: hidden;
+  margin: 0;
+}
+
+.bg {
+  background: url("https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80")
+    no-repeat center center/cover;
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  /* vh and vw referencing the viewport height and width */
+  width: calc(100vw + 60px);
+  height: calc(100vh + 60px);
+  /* we want background to be a layer behind */
+  z-index: -1;
+  filter: blur(px);
+}
+
+.loading-text {
+  font-size: 50px;
+  color: #fff;
+}
