@@ -1,0 +1,55 @@
+/* text-face from google fonts
+with regular 400 + bold 700 fonts */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+/* box sizing as border-box so padding
+of an element will not effect 
+width of an element */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #efedd6;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+h1 {
+  margin: 10px;
+}
+
+.box {
+  background-color: steelblue;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 200px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+  transform: translateX(400%);
+  transition: transform 0.4s ease;
+}
+
+/* every other box will come from the opposite direction--left */
+.box:nth-of-type(even) {
+  transform: translateX(-400%);
+}
+
+/* when class of show is applied to element with class of box,
+element will return to normal position on screen */
+.box.show {
+  transform: translateX(0);
+}
+
+.box h2 {
+  font-size: 40px;
+}
