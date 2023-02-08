@@ -1,0 +1,135 @@
+/* text-face from google fonts
+with regular 400 + bold 700 fonts */
+/* @import url("https://fonts.googleapis.com/css?family=Multi&display=swap"); */
+
+/* custom properties--similar to variables */
+/* can replace redundancies using 'var("specified property")' */
+/* if you want to change colors you only need to change
+custom property values */
+:root {
+  --line-border-fill: #3498db;
+  --line-border-empty: #e0e0e0;
+}
+
+/* So padding of an element will not effect 
+width of an element*/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f6f7fb;
+  font-family: "Multi", sans-serif;
+  /* flex to center body easier */
+  display: flex;
+  align-items: center;
+  /* flexbox needs height attribute for
+  justify content to take effect */
+  justify-content: center;
+  /* vh meaning viewport height */
+  height: 100vh;
+  /* all across the screen -- used
+  to hide scrollbars on default */
+  overflow: hidden;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+}
+
+.progress-container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 30px;
+  max-width: 100%;
+  width: 350px;
+}
+
+.progress-container::before {
+  /* content required when using
+  ::before or ::after */
+  content: "";
+  background-color: var(--line-border-empty);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  /* transform will help change axis value.
+  change the translation of Y axis -50
+  as to make position directly centered */
+  transform: translateY(-50%);
+  height: 4px;
+  width: 100%;
+  /* we want behind progress bar to show
+  behind circles and behind numbers 
+  basically pushing it back a layer*/
+  z-index: -1;
+}
+
+/* styling for progression bar */
+.progress {
+  background-color: var(--line-border-fill);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  /* transform will help change axis value.
+  change the translation of Y axis -50
+  as to make position directly centered */
+  transform: translateY(-50%);
+  height: 4px;
+  width: 0%;
+  /* we want progress bar to show
+  behind circles and behind numbers 
+  basically pushing it back a layer*/
+  z-index: -1;
+  transition: 0.4s ease;
+}
+
+/* stying for indicator circles */
+.circle {
+  background-color: #fff;
+  color: #999;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  /* centralizing the circles */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 3px solid var(--line-border-empty);
+  transition: 0.4s ease;
+}
+
+/* styling for when indicator circles are active */
+.circle.active {
+  border-color: var(--line-border-fill);
+}
+
+/* default styings for button */
+.btn {
+  background-color: var(--line-border-fill);
+  color: #fff;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 8px 30px;
+  margin: 5px;
+  font-size: 14px;
+}
+
+/* styling for when button is active */
+.btn:active {
+  transform: scale(0.98);
+}
+/* styling for when cursor is focused on button */
+.btn:focus {
+  outline: 0;
+}
+/* styling for when button is not enabled */
+.btn:disabled {
+  background-color: var(--line-border-empty);
+  cursor: not-allowed;
+}
