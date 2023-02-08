@@ -1,0 +1,75 @@
+/* text-face from google fonts
+with regular 400 + bold 700 fonts */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+/* box sizing as border-box so padding
+of an element will not effect 
+width of an element */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(90deg, #7d5fff, #7158e2);
+  font-family: "Roboto", sans-serif;
+  /* set display as fex to easier center */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* flexbox needs height attribute for
+  justify content to take effect */
+  /* vh referencing height of viewport */
+  height: 100vh;
+  /* all across the screen -- used
+  to hide scrollbars on default */
+  overflow: hidden;
+  margin: 0;
+}
+
+.search {
+  /* position relative so any inner elements can have
+  attribute set to absolute */
+  position: relative;
+  height: 50px;
+}
+
+.search .input {
+  background-color: #fff;
+  border: 0;
+  font-size: 18px;
+  padding: 15px;
+  height: 50px;
+  width: 50px;
+  /* transition on width property for 0.3s with an ease effect */
+  transition: width 0.3s ease;
+}
+
+.btn {
+  background-color: #fff;
+  border: 0;
+  cursor: pointer;
+  font-size: 24px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 50px;
+  width: 50px;
+  transition: transform 0.3s ease;
+}
+
+/* btn class + input class while in focus state */
+.btn:focus,
+.input:focus {
+  outline: none;
+}
+
+/* when search class has a class of active,
+input class will be affected */
+.search.active .input {
+  width: 200px;
+}
+
+.search.active .btn {
+  /* move element along X axis--goes right since positive value */
+  transform: translateX(198px);
+}
